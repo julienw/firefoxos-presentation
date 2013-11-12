@@ -1,0 +1,690 @@
+<!DOCTYPE HTML>
+<!-- <html lang="en-US"> -->
+<html lang="en-US" class="fade">
+<!-- 
+  ^ a class of "fade" makes slides fade smoothly into one another
+ -->
+<!-- <html lang="en-US" class="nonumbers"> -->
+<!-- 
+  If you want no numbers on the slides add a "nonumbers" class 
+  to the HTML element.
+  Adding a class of "fade" will make slides fade into another. 
+-->
+<head>
+  <meta charset="UTF-8">
+  <title>Introduction à Firefox OS</title>
+<!-- 
+  If you upload your slides to the web, ensure that you have 
+  a good title - this shows up in search results and social
+  media links
+ -->
+  <meta name="viewport" content="width=device-width, user-scalable=yes">
+  <link rel="stylesheet" href="themes/mozilla/styles/style.css">
+</head>
+<body class="list">
+
+  <header class="caption">
+    <h1>Introduction à Firefox OS</h1>
+    <p class="footer">
+    Jérémie Pattonier {@JeremiePat} et Julien Wajsberg {@jwajsberg}
+    </p>
+  </header>
+  <aside class="talkdescription">
+    <p>This slide deck is using the shower system - roll over the previews to see the notes and click any slide to go into presentation mode. Then use keys to navigate. <button onclick="goFullScreen()">Go fullscreen</button></p>
+    <p class="abstract">
+    <strong>Résumé: </strong>
+    Dans cette présentation nous allons présenter les concepts principaux de
+    Firefox OS.
+    </p>
+  </aside>
+
+<!-- 
+    Simply copy the whole block for each slide you want.
+  Special slides get extra classes. Each slide needs an ID 
+  to allow for bookmarking and target jumping.
+-->
+
+<div id="firefoxos" class="slide cover"><div>
+  <section>
+    <header>
+      <h2>Introduction à Firefox OS</h2>
+    </header>
+    <img src="pictures/fxos/firefoxos.png" 
+         alt="Firefox OS" 
+         class="middle" height="450">
+  <small class="byline">
+    Jérémie Pattonier et Julien Wajsberg, Paris, 12 novembre 2013
+  </small>
+  <footer class="notes">
+  </footer>
+  </section>
+</div></div>
+
+<!-- end slide block -->
+
+<!-- ===================================================================
+Firefox OS 
+======================================================================== -->
+
+<div id="gaiageckogonk" class="slide"><div>
+  <section>
+    <header>
+      <h2>Firefox OS</h2>
+    </header>
+    <img src="pictures/fxos/gaiageckogonk.png" 
+         alt="Firefox OS" 
+         class="middle" height="450">
+    <footer class="notes">
+Explication des différentes couches et leurs responsabilités. On va aussi parler
+de l'appli System.
+  </footer>
+  </section>
+</div></div>
+
+
+<div id="gaiageckogonk-security" class="slide"><div>
+  <section>
+    <header>
+      <h2>Firefox OS et la sécurité</h2>
+    </header>
+    <img src="pictures/fxos/gaiageckogonk-security.png" 
+         alt="Firefox OS" 
+         class="middle" height="450">
+    <footer class="notes">
+  Introduction à lé sécurité de Firefox OS.
+    </footer>
+  </section>
+</div></div>
+
+<div id="webtech" class="slide cover"><div>
+  <section>
+    <header>
+      <h2>L'OS est construit avec des technologies Web ouvertes ou en cours de
+        standardisation.</h2>
+    </header>
+    <img src="pictures/fxos/firefox-os-emulator.jpg" 
+         alt="firefox os emulator and source" 
+         class="middle shadow" height="450">
+  <footer class="notes">
+  </footer>
+ </section>
+</div></div>
+
+  <div id="apis-permissions" class="slide"><div>
+    <section>
+      <header>
+        <h2>APIs et permissions</h2>
+      </header>
+      <ul>
+        <li>L'accès à une fonctionnalité matérielle passe toujours par une
+        API</li>
+        <li>L'appel à cette API peut être autorisée ou non, au cas par cas</li>
+        <li>Différentes règles sont appliquées&nbsp;: accord de l'utilisateur,
+        accord implicite, application installée ou non</li>
+        <li>Une API non standardisée (donc expérimentale) va être limitée aux applications
+        installées</li>
+      </ul>
+      <footer class="notes">
+        Parler de la pollution du Web.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="zomgopenapps" class="slide oneline"><div>
+    <section>
+      <header>
+        <h2>Passer d'un site web à une application Firefox OS</h2>
+      </header>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="manifest" class="slide"><div>
+    <section>
+      <header>
+        <h2>Définie par manifest.webapp</h2>
+      </header>
+      <pre>
+        <code>{</code>
+        <code>  "name": "My App",</code>
+        <code>  "description": "My elevator pitch goes here",</code>
+        <code>  "launch_path": "/",</code>
+        <code>  "icons": { "128": "/img/icon-128.png" },</code>
+        <code>  "developer": {</code>
+        <code>    "name": "Your name or organization",</code>
+        <code>    "url": "http://your-homepage-here.org"</code>
+        <code>  }</code>
+        <code>}</code>
+      </pre>
+      <p class="demourl"><a href="https://developer.mozilla.org/en-US/docs/Apps/Manifest">App manifest</a></p>
+    <footer class="notes">
+      Gotcha: bien configurer le mime type et les expirations
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="threekinds" class="slide"><div>
+    <section>
+      <header>
+        <h2>Plusieurs types d'application&hellip;</h2>
+      </header>
+      <ul class='longlist'>
+        <li><mark>Contenu Web</mark> - sans privilèges particuliers, mais permet
+        tout de même l'accès à certaines APIs (ex: géolocalisation)</li>
+        <li><mark>Applications hébergées</mark> - stockées et servies par un serveur web.
+        Facile à mettre à jour, mais a un accès limité aux APIs.</li>
+        <li><mark>Applications packagées</mark> - packagées dans des fichiers
+        ZIP, elles peuvent être installées depuis n'importe quel site.
+        <li><mark>Applications privilégiées</mark> - revues par la Marketplace,
+        packagées, et signées par une clé identifiant la Marketplace.</li>
+        <li><mark>Applications certifiers</mark> - ces applications font partie
+        du système et ne peuvent pas être installées autrement.</li>
+      </ul>
+      <p class="demourl"><a href="https://developer.mozilla.org/en-US/docs/Apps/App_permissions">App permissions</a></p>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="installapp" class="slide"><div>
+    <section>
+      <header>
+        <h2>Installer une application depuis le Web</h2>
+      </header>
+        <pre>
+        <code>var installapp = navigator.mozApps.install(manifestURL);</code>
+        <code>installapp.onsuccess = function(data) {</code>
+        <code>  // L'app est installée</code>
+        <code>};</code>
+        <code>installapp.onerror = function() {</code>
+        <code> // L'app n'est pas installée, et l'erreur est:</code>
+        <code> // installapp.error.name</code>
+        <code>};</code>
+        </pre>
+      <footer class="notes">
+      La même API permet aussi de contrôler la mise à jour d'une application.
+      </footer>
+    </section>
+  </div></div>
+
+  <!--- Les API -->
+  <div id="zomgapi" class="slide oneline"><div>
+    <section>
+      <header>
+        <h2>Des APIs pour accéder au matériel</h2>
+      </header>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="webapis" class="slide h"><div>
+    <section>
+      <header>
+        <h2>Web APIs</h2>
+      </header>
+      <img src="pictures/fxos/webapiwiki.png" height="400" class="middle shadow" alt="WebAPI wiki">
+      <p class="demourl">
+        <a href="https://wiki.mozilla.org/WebAPI">WebAPI Wiki</a>
+      </p>      
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+   <div id="webapibullets" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web APIs</h2>
+      </header>
+      <ul class="longlist">
+        <li>Open API specifications to access the hardware of devices</li>
+        <li>Created with and submitted to standards bodies and other browser makers</li>
+        <li>A plain vanilla JavaScript way to interact with the device</li>
+        <li>Event driven - every access has a success and failure handler with full insight into what went wrong</li>
+        <li>Secured by a three layer security model allowing more or less access depending on the location of the app (hosted vs. delivered from the marketplace)</li>
+      </ul>
+      <p class="demourl">
+        <a href="https://wiki.mozilla.org/WebAPI">WebAPI Wiki</a>
+      </p>      
+      <footer class="notes">
+        The Web API effort of Mozilla is a way to make the whole hardware of mobile devices available in JavaScript in a secure, predictable and open way agreed with other browser makers and standards bodies. 
+      </footer>
+    </section>
+  </div></div>
+
+   <div id="webapilist" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web APIs (hosted apps)</h2>
+      </header>
+      <ul class="inline">
+        <li>Vibration API</li>
+        <li>Screen Orientation</li>
+        <li>Geolocation API</li>
+        <li>Mouse Lock API</li>
+        <li>Open WebApps</li>
+        <li>Network Information API</li>
+        <li>Battery Status API</li>
+        <li>Alarm API</li>
+        <li>Push Notifications API</li>
+        <li>WebFM API / FMRadio</li>
+        <li>WebPayment</li>
+        <li>IndexedDB</li>
+        <li>Ambient light sensor</li>
+        <li>Proximity sensor</li>
+        <li>Notification</li>
+      </ul>
+      <p class="demourl">
+        <a href="https://hacks.mozilla.org/2013/02/using-webapis-to-make-the-web-layer-more-capable/">Using WebAPIs to make the web layer more capable</a>
+      </p>      
+      <footer class="notes">
+        Hosted applications, meaning HTML5 apps you run on your own server, get the full functionality of HTML5 and additional API support shown here. All of these APIs are defined on the Mozilla Wiki and proposals to the standard bodies. Some of them have already been implemented in other other browsers, like the geolocation API. For now, however, only Firefox OS gives you all of them. These APIs bring much needed extra functionality to the HTML5 stack. 
+      </footer>
+    </section>
+  </div></div>
+
+   <div id="battery" class="slide"><div>
+    <section>
+      <header>
+        <h2>Battery API</h2>
+      </header>
+        <pre>
+          <code>var b = navigator.battery;</code>
+          <code>if (b) {</code>
+          <code>  var level = Math.round(b.level * 100) + "%",</code>
+          <code>      charging = (b.charging) ? "" : "not ",</code>
+          <code>      chargeTime = parseInt(b.chargingTime / 60, 10),</code>
+          <code>      dischargeTime = parseInt(b.dischargingTime/60,10);</code>
+          <code>  b.addEventListener("levelchange", show);</code>
+          <code>  b.addEventListener("chargingchange", show);</code>
+          <code>  b.addEventListener("chargingtimechange", show);</code>
+          <code>  b.addEventListener("dischargingtimechange", show);</code>
+          <code>}</code>
+        </pre>
+      <footer class="notes">
+        This is an example of how to use one of those APIs. They come with properties, methods and fire a lot of events which makes it easy to include them in your own solutions. And as you can see using a simple if statement around your code ensures that only environments that support it execute your code.
+      </footer>
+    </section>
+  </div></div>
+
+   <div id="webapilistprivileged" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web APIs (privileged apps)</h2>
+      </header>
+      <ul>
+        <li>Device Storage API</li>
+        <li>Browser API</li>
+        <li>TCP Socket API</li>
+        <li>Contacts API</li>
+        <li>systemXHR</li>
+      </ul>
+      <p class="demourl">
+        <a href="https://hacks.mozilla.org/2013/02/using-webapis-to-make-the-web-layer-more-capable/">Using WebAPIs to make the web layer more capable</a>
+      </p>      
+      <footer class="notes">
+        Privileged apps have access to more APIs and those dealing with content of more sensitive nature like storing information on the device's file system, accessing the contacts list or loading third party data from the web. To recap, privileged apps need to be packaged up, submitted to the marketplace and delivered from Mozilla's infrastructure. We can not allow just any server on the web to access the user's address book as that would allow the creation of malware in a very easy fashion.
+      </footer>
+    </section>
+  </div></div>
+
+   <div id="contactsapi" class="slide"><div>
+    <section>
+      <header>
+        <h2>Contacts API</h2>
+      </header>
+        <pre>
+          <code>var contact = new mozContact();</code>
+          <code>contact.init({name: "Christian"});</code>
+          <code>var request = navigator.mozContacts.save(contact);</code>
+          <code>request.onsuccess = function() {</code>
+          <code>  // contact generated</code>
+          <code>};</code>
+          <code>request.onerror = function() {</code>
+          <code>  // contact generation failed</code>
+          <code>};</code>
+        </pre>
+      <footer class="notes">
+        For a hosted, privileged app it is simple to create a new contact. That enables you to sync address books across services, for example. Again, you have a few methods and event handlers for the success and error case.
+      </footer>
+    </section>
+  </div></div>
+
+   <div id="webapilistcertified" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web APIs (certified apps)</h2>
+      </header>
+        <ul class="inline">
+          <li>WebTelephony</li>
+          <li>WebSMS</li>
+          <li>Idle API</li>
+          <li>Settings API</li>
+          <li>Power Management API</li>
+          <li>Mobile Connection API</li>
+          <li>WiFi Information API</li>
+          <li>WebBluetooth</li>
+          <li>Permissions API</li>
+          <li>Network Stats API</li>
+          <li>Camera API</li>
+          <li>Time/Clock API</li>
+          <li>Attention screen</li>
+          <li>Voicemail</li>
+        </ul>
+     <p class="demourl">
+        <a href="https://hacks.mozilla.org/2013/02/using-webapis-to-make-the-web-layer-more-capable/">Using WebAPIs to make the web layer more capable</a>
+      </p>      
+      <footer class="notes">
+        Certified apps are the apps that make up the operating system itself. They are only built by Mozilla and partners and have full access to the hardware of the device, for example to make phone calls or change permissions on the device. 
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="systemmessage" class="slide"><div>
+   <section>
+     <header>
+       <h2>Les messages systèmes</h2>
+     </header>
+     <ul>
+       <li>Les applications peuvent s'abonner à des messages systèmes.</li>
+       <li>Le principe, c'est que l'application peut être lancée pour recevoir
+       ce message.</li>
+       <li>Beaucoup de fonctions sont implémentées avec ce principe: push
+       notifications, téléphonie, sms, activités</li>
+     </ul>
+    <p class="demourl">
+     </p>      
+     <footer class="notes">
+     </footer>
+   </section>
+ </div></div>
+
+<div id="systemmessage-manifest" class="slide"><div>
+ <section>
+   <header>
+     <h2>Les messages système: le manifeste</h2>
+     </header>
+     <pre>
+    <code>{</code>
+    <code>  ...</code>
+    <code>  "messages": [</code>
+    <code>    { "alarm": "/index.html" }</code>
+    <code>  ]</code>
+    <code>}</code>
+     </pre>
+  <p class="demourl">
+   </p>      
+   <footer class="notes">
+   </footer>
+ </section>
+</div></div>
+
+<div id="systemmessage-handler" class="slide"><div>
+ <section>
+   <header>
+     <h2>Les messages système: le gestionnaire</h2>
+     </header>
+     <pre>
+    <code>navigator.mozSetMessageHandler('alarm', function gotMessage(message) {</code>
+    <code>  ...</code>
+    <code>});</code>
+     </pre>
+  <p class="demourl">
+   </p>      
+   <footer class="notes">
+   </footer>
+ </section>
+</div></div>
+
+<!-- ===================================================================
+WEB ACTIVITIES
+======================================================================== -->
+
+  <div id="zomgactivities" class="slide shout"><div>
+    <section>
+      <header>
+        <h2>Web Activities</h2>
+      </header>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="webactbullets" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web Activities</h2>
+      </header>
+      <ul class="longlist">
+        <li>A proposal to get access to hardware by keeping the user in control instead of authenticating on their behalf</li>
+        <li>Comparable to Android Intents, but with a more limited scope that makes sense for the web</li>
+        <li>A technique to create an ecosystem of apps on the device - apps can register as handlers for certain tasks and other apps use them</li>
+        <li>A simple way to get access to hardware and data without needing to package your app and host it from the market</li>
+        <li>Highly secure as nothing happens without the user initiating it</li>
+      </ul>
+      <p class="demourl">
+        <a href="https://wiki.mozilla.org/WebAPI/WebActivities">WebActivies Wiki</a>
+      </p>      
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="activities" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web activities</h2>
+      </header>
+      <ul class="lots">
+        <li>configure</li>
+        <li>costcontrol</li>
+        <li>dial</li>
+        <li>open</li>
+        <li>pick</li>
+        <li>record</li>
+        <li>save-bookmark</li>
+        <li>share</li>
+        <li>view</li>
+        <li>new, f.e type: “websms/sms” or “webcontacts/contact” </li>
+      </ul>
+    <footer class="notes">
+      If you want to access the camera or the address book without packaging your application, there is an alternative called Web Activities. These are much like Web Intents were for Chrome, but more focused on real use cases of the web rather than Android. Using Web Activities you can access the hardware without having to authenticate on the user's behalf. Instead, the users get prompted to use the apps they always use to give you what your app wants.
+    </footer>
+    </section>
+  </div></div>
+
+ <div id="callactivity" class="slide"><div>
+    <section>
+      <header>
+        <h2>Sending a number to the phone</h2>
+      </header>
+      <pre>
+        <code>var call = new MozActivity({</code>
+        <code>  name: "dial",</code>
+        <code>  data: {</code>
+        <code>    number: "+1804100100"</code>
+        <code>  }</code>
+        <code>});</code>
+      </pre>
+      <footer class="notes">
+        This, as an example, is a call activity. When this JavaScript executes, the user will be sent to the dialer app (or Skype, depending on what app was defined as the default one), the number is sent to the app and the user needs to initiate the call. This is the main difference to WebAPIs - the user has the final say. When the call is denied or the user hung up the phone would go back to your app.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="imageactivity" class="slide"><div>
+    <section>
+      <header>
+        <h2>Get an image from the phone (1/2)</h2>
+      </header>
+      <img src="pictures/fxos/pick-activity.jpg" alt="Pick activity" class="right shadow">
+      <pre>
+        <code>var getphoto = new MozActivity({</code>
+        <code>  name: "pick",</code>
+        <code>  data: {</code>
+        <code>    type: ["image/png",</code> 
+        <code>           "image/jpg", </code>
+        <code>           "image/jpeg"]</code>
+        <code>  }</code>
+        <code>});</code>
+      </pre>
+      <footer class="notes">
+        The 'pick' activity is most probably the most useful one, as it allows you to tell the user that you want something from the device. In this case we define in the MIME type array that we are expecting an image. This would result in the screenshot shown on the right - the user gets asked to give us an image, either from the wallpaper or the photos folder or by taking a new photo with the camera. 
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="imageactivity2" class="slide"><div>
+    <section>
+      <header>
+        <h2>Get an image from the phone (2/2)</h2>
+      </header>
+      <pre>
+        <code>getphoto.onsuccess = function () {</code>
+        <code>  var img = document.createElement("img");</code>
+        <code>  if (this.result.blob.type.indexOf("image") != -1) {</code>
+        <code>    img.src = window.URL.createObjectURL(this.result.blob);</code>
+        <code>  }</code>
+        <code>};</code>
+        <code>getphoto.onerror = function () { // error</code>
+        <code>};</code>
+      </pre>
+      <footer class="notes">
+        To retrieve the photo all you need is a simple event handler in which you get the image as a data blob and you can play with it in your app.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="android" class="slide"><div>
+    <section>
+      <header>
+        <h2>Activities/Hosted Apps on Android</h2>
+      </header>
+      <figure class="middle shadow swing frame">
+        <img src="pictures/fxos/foxkeh-android.png" 
+             alt="Foxkeh loves android">
+      </figure>
+      <footer class="notes">
+        The great news is that if you have Firefox on Android, this functionality is also available outside of Firefox OS for you - any Android device will do.
+      </footer>
+    </section>
+  </div></div>
+
+<!-- ===================================================================
+TOOLS 
+======================================================================== -->
+
+  <div id="zomgtools" class="slide shout"><div>
+    <section>
+      <header>
+        <h2>Tools</h2>
+      </header>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="toolsbullets" class="slide"><div>
+    <section>
+      <header>
+        <h2>Tools for Firefox OS / HTML5</h2>
+      </header>
+      <ul class="longlist">
+        <li>Unlike iOS and Android, there is no fixed SDK or set of IDEs/tools for Firefox OS.</li>
+        <li>Firefox OS apps are HTML5 apps, and we never had one definite set of tools for writing HTML</li>
+        <li>That said, there are some things to make your life easier and get you started more quickly</li>
+        <li>A lot of them come with the browser, or as add-ons to the browser. That way you can use the computer you are comfortable with to develop code</li>
+        <li>You do not need a Firefox OS device to get started – you might need one though to do interaction/performance testing</li>
+        <li>This is an ongoing thing – more tools to come :)</li>
+      </ul>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="tools2bullets" class="slide"><div>
+    <section>
+      <header>
+        <h2>Tools for Firefox OS / HTML5</h2>
+      </header>
+      <ul class="longlist">
+        <li>Mozilla has a few things brewing in the tools space</li>
+        <li>Make sure you show the developer tools in Firefox (NOT, I repeat NOT Firebug) and the responsive view which allows you to resize the canvas of the browser to phone size</li>
+        <li>Show the simulator live, change some of the CSS to show that apps are just like web sites</li>
+        <li>Point to the following resizes, make sure to tell people that the OS components are for Gaia - not for any app out there.</li>
+      </ul>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="devtools" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>Les DevTools et le Remote Debugger</h2>
+      </header>
+      <img src="pictures/fxos/devtools.jpg" 
+           alt="Developer tools" 
+           class="middle">
+    <footer class="notes">
+      Browsers now are also developer tools. The tools built into the Firefox OS browser, for example, allow you to create apps in the browser, debug what is happening on the phone and simulate a Firefox OS device on your computer. 
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="fxossimulator" class="slide h"><div>
+    <section>
+      <header>
+        <h2>Firefox OS Simulator</h2>
+      </header>
+      <img src="pictures/fxos/simulator.png" 
+           alt="Simulator" 
+           class="middle shadow" height="400">
+      <p class="demourl">
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/firefox-os-simulator/">
+          Firefox OS Simulator
+        </a>
+      </p>
+    <footer class="notes">
+      The Firefox OS Simulator is an add-on for Firefox which simulates a phone on your computer. You can test the install process and buying and selling applications and you can send apps directly to a connected phone. You can also debug your applications directly from your computer including live CSS changes. 
+    </footer>
+    </section>
+  </div></div>
+
+
+<!-- ===================================================================
+AND… I'M SPENT
+======================================================================== -->
+
+  <div id="thanks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Thanks</h2>
+      </header>
+      <img src="pictures/mozillaoverview/redpanda.jpg" class="right" alt="Red panda (Firefox)">
+      <ul class="nobull">
+        <li>Jérémie Patonnier</li>
+        <li>Julien Wajsberg</li>
+        <li>Introduction à Firefox OS</li>
+      </ul>
+      <small class="credits">
+        <a href="http://www.flickr.com/photos/yortw/5798336827/">Photo by Yortw</a>
+      </small>
+
+    <footer class="notes">
+    </footer>
+
+    </section>
+  </div></div>
+
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"><div></div></div>
+  <script src="scripts/script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
