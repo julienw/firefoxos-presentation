@@ -27,8 +27,7 @@
     while(all--) {
       var tc = codes[all].innerHTML;
       if (tc.indexOf('<')!== -1){
-      tc = tc.replace(/</g,'&lt');
-      tc = tc.replace(/>/g,'&gt');
+      tc = tc.replace(/<((?!\/?mark).*?)>/g,'&lt$1&gt');
       codes[all].innerHTML = tc;
       }
     }
