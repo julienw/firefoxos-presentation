@@ -309,7 +309,7 @@ Firefox OS
   <div id="zomgapi" class="slide oneline"><div>
     <section>
       <header>
-        <h2>Des APIs pour prendre le controle de son application</h2>
+        <h2>Des APIs pour prendre <br>le controle de son application</h2>
       </header>
     <footer class="notes">
     </footer>
@@ -393,27 +393,204 @@ Firefox OS
     </section>
   </div></div>
 
-  <div id="battery" class="slide"><div>
+  <div id="webapilist2" class="slide"><div>
     <section>
       <header>
-        <h2>Battery API</h2>
+        <h2>Les API à connaitre</h2>
       </header>
-        <pre>
-          <code>var b = navigator.battery;</code>
-          <code>if (b) {</code>
-          <code>  var level = Math.round(b.level * 100) + "%",</code>
-          <code>      charging = (b.charging) ? "" : "not ",</code>
-          <code>      chargeTime = parseInt(b.chargingTime / 60, 10),</code>
-          <code>      dischargeTime = parseInt(b.dischargingTime/60,10);</code>
-          <code>  b.addEventListener("levelchange", show);</code>
-          <code>  b.addEventListener("chargingchange", show);</code>
-          <code>  b.addEventListener("chargingtimechange", show);</code>
-          <code>  b.addEventListener("dischargingtimechange", show);</code>
-          <code>}</code>
-        </pre>
-      <footer class="notes">
-        This is an example of how to use one of those APIs. They come with properties, methods and fire a lot of events which makes it easy to include them in your own solutions. And as you can see using a simple if statement around your code ensures that only environments that support it execute your code.
-      </footer>
+
+      <ul>
+        <li>Gérer le cache et la latence: Application Cache, Storage, IndexedDB, Offline.</li>
+        <li>Accéder au materiel: Sensor/Device API (devicemotion, deviceorientation, etc.)</li>
+        <li>Sortir du navigateur: Notifications</li>
+        <li>Travailler avec le réseau: Web Socket</li>
+        <li>Optimiser vos application: Page Visibility API</li>
+      </ul>
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="apiapplicationcache" class="slide"><div>
+    <section>
+      <header>
+        <h2>Application Cache</h2>
+      </header>
+
+      <pre style="font-size:80%">
+        <code>CACHE MANIFEST</code>
+        <code class="comment"># v1 2011-08-14</code>
+        <code>style.css</code>
+        <code> </code>
+        <code class="comment"># Use from network if available</code>
+        <code>NETWORK:</code>
+        <code>script.js</code>
+        <code> </code>
+        <code class="comment"># Fallback content</code>
+        <code>FALLBACK:</code>
+        <code>/ fallback.js</code>
+      </pre>
+
+      <p class="demourl">
+        <a href="https://developer.mozilla.org/en-US/docs/HTML/Using_the_application_cache">Application Cache on MDN</a>
+      </p> 
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="apistorage" class="slide"><div>
+    <section>
+      <header>
+        <h2>Storage</h2>
+      </header>
+
+      <ul>
+        <li>sessionStorage (temporaire, par onglet)</li>
+        <li>localStorage (persistant, global)</li>
+      </ul>
+
+      <pre>
+        <code>localStorage.<mark>setItem</mark>('foo','bar');</code>
+        <code> </code>
+        <code>var foo = localStorage.<mark>getItem</mark>('foo');</code>
+        <code> </code>
+        <code>localStorage.<mark>removeItem</mark>('foo');</code>
+      </pre>
+
+      <p class="demourl">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage">Storage on MDN</a>
+      </p> 
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="apiindexeddb" class="slide"><div>
+    <section>
+      <header>
+        <h2>IndexedDB</h2>
+      </header>
+
+      <ul>
+        <li>Une base de donnée de type « index »</li>
+        <li>Attention, ce n'est pas du SQL</li>
+        <li>On stock des paire clé/valeur</li>
+        <li>Le moindre changement repose sur le concept de transaction</li>
+        <li>L'API est totalement asychrone</li>
+      </ul>
+
+      <p class="demourl">
+        <a href="https://developer.mozilla.org/en-US/docs/IndexedDB">IndexedDB on MDN</a>
+      </p> 
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="apisensor" class="slide"><div>
+    <section>
+      <header>
+        <h2>Sensor/Device API</h2>
+      </header>
+
+      <ul>
+        <li>Geolocation, orientation, proximity, battery, luminosité, etc.</li>
+      </ul>
+
+      <pre style="font-size:85%">
+        <code>function handleOrientation(event) {</code>
+        <code>  console.log(event);</code>
+        <code class="comment">  // Do stuff with the new orientation</code>
+        <code>}</code>
+        <code> </code>
+        <code>window.addEventListener("deviceorientation", handleOrientation);</code>
+      </pre>
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="apinotification" class="slide"><div>
+    <section>
+      <header>
+        <h2>Notification</h2>
+      </header>
+
+      <pre style="font-size:85%">
+        <code class="comment">// L'accord de l'utilisateur est indispensable</code>
+        <code>Notification.<mark>requestPermission()</mark></code>
+        <code> </code>
+        <code class="comment">// Il ne reste plus qu'a créer une notification</code>
+        <code>var n = <mark>new</mark> Notification("Hi!")</code>
+        <code> </code>
+        <code>n.<mark>onshow</mark>(function () {</code>
+        <code>  setTimeout(n.<mark>close</mark>, 5000);</code>
+        <code>})</code>
+      </pre>
+
+      <p class="demourl">
+        <a href="https://developer.mozilla.org/en-US/docs/WebAPI/Using_Web_Notifications">Notification on MDN</a>
+      </p>
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="apiwebsocket" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web Socket</h2>
+      </header>
+
+      <pre style="font-size:75%">
+        <code class="comment">// Se connecter à un Web Socket</code>
+        <code>var socket = <mark>new</mark> WebSocket("<mark>ws:</mark>//www.example.com/socketserver");</code>
+        <code> </code>
+        <code class="comment">// Envoyer des données</code>
+        <code>socket.<mark>onopen</mark> = function () {</code>
+        <code>  socket.<mark>send</mark>("I'm ready.");</code>
+        <code>}</code>
+        <code> </code>
+        <code class="comment">// Recevoir des données</code>
+        <code>socket.<mark>onmessage</mark>(function (event) {</code>
+        <code>  console.log(event.<mark>data</mark>);</code>
+        <code>})</code>
+      </pre>
+
+      <p class="demourl">
+        <a href="https://developer.mozilla.org/en-US/docs/WebSockets">WebSocket on MDN</a>
+      </p>
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="apipagevisibility" class="slide"><div>
+    <section>
+      <header>
+        <h2>Page Visibility API</h2>
+      </header>
+
+      <pre style="font-size:80%">
+        <code>function handleVisibilityChange() {</code>
+        <code>  if (<mark>document.hidden</mark>) {</code>
+        <code class="comment">    // Stop doing stuff</code>
+        <code>  } else {</code>
+        <code class="comment">    // Start doing stuff</code>
+        <code>  }</code>
+        <code>}</code>
+        <code> </code>
+        <code>document.addEventListener(</code>
+        <code>  "<mark>visibilitychange</mark>", handleVisibilityChange</code>
+        <code>);</code>
+      </pre>
+
+      <p class="demourl">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/User_experience/Using_the_Page_Visibility_API">Page Visibility on MDN</a>
+      </p> 
+
+      <footer class="notes"></footer>
     </section>
   </div></div>
 
