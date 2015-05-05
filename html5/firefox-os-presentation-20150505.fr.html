@@ -1,0 +1,627 @@
+<!DOCTYPE HTML>
+<!-- <html lang="en-US"> -->
+<html lang="en-US" class="fade">
+<!-- 
+  ^ a class of "fade" makes slides fade smoothly into one another
+ -->
+<!-- <html lang="en-US" class="nonumbers"> -->
+<!-- 
+  If you want no numbers on the slides add a "nonumbers" class 
+  to the HTML element.
+  Adding a class of "fade" will make slides fade into another. 
+-->
+<head>
+  <meta charset="UTF-8">
+  <title>Introduction à Firefox OS</title>
+<!-- 
+  If you upload your slides to the web, ensure that you have 
+  a good title - this shows up in search results and social
+  media links
+ -->
+  <meta name="viewport" content="width=device-width, user-scalable=yes">
+  <link rel="stylesheet" href="themes/mozilla/styles/style.css">
+</head>
+<body class="list">
+
+  <header class="caption">
+    <h1>Introduction à Firefox OS</h1>
+    <p class="footer">
+    Jérémie Pattonier {@JeremiePat} et Julien Wajsberg {@jwajsberg}
+    </p>
+  </header>
+  <aside class="talkdescription">
+    <p>This slide deck is using the shower system - roll over the previews to see the notes and click any slide to go into presentation mode. Then use keys to navigate. <button onclick="goFullScreen()">Go fullscreen</button></p>
+    <p class="abstract">
+    <strong>Résumé: </strong>
+    Dans cette présentation nous allons présenter les concepts principaux de
+    Firefox OS.
+    </p>
+  </aside>
+
+<!-- 
+    Simply copy the whole block for each slide you want.
+  Special slides get extra classes. Each slide needs an ID 
+  to allow for bookmarking and target jumping.
+-->
+
+  <div id="firefoxos" class="slide cover"><div>
+    <section>
+      <header>
+        <h2>Introduction à Firefox OS</h2>
+      </header>
+      <img src="pictures/fxos/firefoxos.png" 
+           alt="Firefox OS" 
+           class="middle" height="450">
+      <small class="byline">
+        Julien Wajsberg, Paris, 5 mai 2015, SFEIR
+      </small>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+<!-- end slide block -->
+
+<!-- ===================================================================
+Web App 
+======================================================================== -->
+
+  <div id="zomgwebapp" class="slide oneline"><div>
+    <section>
+      <header>
+        <h2>Le chemin vers les applications Web</h2>
+      </header>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="webapp" class="slide"><div>
+    <section>
+      <header>
+        <h2>Site Web vs. Web App</h2>
+      </header>
+      
+      <ul>
+        <li>Depuis 20 ans, les navigateurs évoluent</li>
+        <li>1991: Ce sont des liseuses de document</li>
+        <li>Aujourd'hui: Ce sont des « runtimes » applicatifs</li>
+      </ul>
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="archi1" class="slide"><div>
+    <section>
+      <header>
+        <h2>Architecture</h2>
+        <h3>Un site web classique</h3>
+      </header>
+      
+      <img src="pictures/architecture/schema-1@2x.png" 
+           alt="Site Web" 
+           class="middle" height="134" style="background:#000;border-radius:5px;padding:2em;">
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="archi2" class="slide"><div>
+    <section>
+      <header>
+        <h2>Architecture</h2>
+        <h3>Un site web moderne</h3>
+      </header>
+      
+      <img src="pictures/architecture/schema-2@2x.png" 
+           alt="Site Web" 
+           class="middle" height="134" style="background:#000;border-radius:5px;padding:2em;">
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="archi3" class="slide"><div>
+    <section>
+      <header>
+        <h2>Architecture</h2>
+        <h3>Une application web</h3>
+      </header>
+      
+      <img src="pictures/architecture/schema-3@2x.png" 
+           alt="Site Web" 
+           class="middle" height="163" style="background:#000;border-radius:5px;padding:2em;">
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="archi4" class="slide"><div>
+    <section>
+      <header>
+        <h2>Architecture</h2>
+        <h3>Une application web « packagée »</h3>
+      </header>
+      
+      <img src="pictures/architecture/schema-4@2x.png" 
+           alt="Site Web" 
+           class="middle" height="275" style="background:#000;border-radius:5px;padding:2em;margin-top:1em;">
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+<!-- ===================================================================
+Firefox OS 
+======================================================================== -->
+
+  <div id="zomgfirefoxos" class="slide oneline"><div>
+    <section>
+      <header>
+        <h2>Firefox OS</h2>
+      </header>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="gaiageckogonk" class="slide"><div>
+    <section>
+      <header>
+        <h2>Firefox OS</h2>
+      </header>
+      <img src="pictures/fxos/gaiageckogonk.png" 
+           alt="Firefox OS" 
+           class="middle" height="450">
+      <footer class="notes">
+        Explication des différentes couches et leurs responsabilités. On va aussi parler de l'appli System.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="gaiageckogonk-security" class="slide"><div>
+    <section>
+      <header>
+        <h2>Firefox OS et la sécurité</h2>
+      </header>
+      <img src="pictures/fxos/gaiageckogonk-security.png" 
+           alt="Firefox OS" 
+           class="middle" height="450">
+      <footer class="notes">
+        Introduction à lé sécurité de Firefox OS.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="webtech" class="slide cover"><div>
+    <section>
+      <header>
+        <h2>L'OS est construit avec des technologies Web ouvertes ou en cours de
+          standardisation.</h2>
+      </header>
+      <img src="pictures/fxos/firefox-os-emulator.jpg" 
+           alt="firefox os emulator and source" 
+           class="middle shadow" height="450">
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="apis-permissions" class="slide"><div>
+    <section>
+      <header>
+        <h2>APIs et permissions</h2>
+      </header>
+      <ul>
+        <li>L'accès à une fonctionnalité matérielle passe toujours par une
+        API</li>
+        <li>L'appel à cette API peut être autorisée ou non, au cas par cas</li>
+        <li>Différentes règles sont appliquées&nbsp;: accord de l'utilisateur,
+        accord implicite, application installée ou non</li>
+        <li>Une API non standardisée (donc expérimentale) va être limitée aux applications
+        installées</li>
+      </ul>
+      <footer class="notes">
+        Parler de la pollution du Web.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="zomgopenapps" class="slide oneline"><div>
+    <section>
+      <header>
+        <h2>Passer d'un site web à une application Firefox OS</h2>
+      </header>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="manifest" class="slide"><div>
+    <section>
+      <header>
+        <h2>Définie par manifest.webapp</h2>
+      </header>
+      <pre>
+        <code>{</code>
+        <code>  "name": "My App",</code>
+        <code>  "description": "My elevator pitch goes here",</code>
+        <code>  "launch_path": "/",</code>
+        <code>  "icons": { "128": "/img/icon-128.png" },</code>
+        <code>  "developer": {</code>
+        <code>    "name": "Your name or organization",</code>
+        <code>    "url": "http://your-homepage-here.org"</code>
+        <code>  }</code>
+        <code>}</code>
+      </pre>
+      <p class="demourl"><a href="https://developer.mozilla.org/en-US/docs/Apps/Manifest">App manifest</a></p>
+    <footer class="notes">
+      Gotcha: bien configurer le mime type et les expirations
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="threekinds" class="slide"><div>
+    <section>
+      <header>
+        <h2>Plusieurs types d'application&hellip;</h2>
+      </header>
+      <ul class='longlist'>
+        <li><mark>Contenu Web</mark> - sans privilèges particuliers, mais permet
+        tout de même l'accès à certaines APIs (ex: géolocalisation)</li>
+        <li><mark>Applications hébergées</mark> - stockées et servies par un serveur web.
+        Facile à mettre à jour, mais a un accès limité aux APIs.</li>
+        <li><mark>Applications packagées</mark> - packagées dans des fichiers
+        ZIP, elles peuvent être installées depuis n'importe quel site.
+        <li><mark>Applications privilégiées</mark> - revues par la Marketplace,
+        packagées, et signées par une clé identifiant la Marketplace.</li>
+        <li><mark>Applications certifiers</mark> - ces applications font partie
+        du système et ne peuvent pas être installées autrement.</li>
+      </ul>
+      <p class="demourl"><a href="https://developer.mozilla.org/en-US/docs/Apps/App_permissions">App permissions</a></p>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="installapp" class="slide"><div>
+    <section>
+      <header>
+        <h2>Installer une application depuis le Web</h2>
+      </header>
+        <pre>
+        <code>var installapp = navigator.mozApps.install(manifestURL);</code>
+        <code>installapp.onsuccess = function(data) {</code>
+        <code>  // L'app est installée</code>
+        <code>};</code>
+        <code>installapp.onerror = function() {</code>
+        <code> // L'app n'est pas installée, et l'erreur est:</code>
+        <code> // installapp.error.name</code>
+        <code>};</code>
+        </pre>
+      <footer class="notes">
+      La même API permet aussi de contrôler la mise à jour d'une application.
+      </footer>
+    </section>
+  </div></div>
+
+  <!--- Les API -->
+  <div id="zomgapi" class="slide oneline"><div>
+    <section>
+      <header>
+        <h2>Des APIs pour prendre <br>le contrôle de son application</h2>
+      </header>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="webapis" class="slide h"><div>
+    <section>
+      <header>
+        <h2>Web APIs</h2>
+      </header>
+      <img src="pictures/fxos/webapiwiki.png" height="400" class="middle shadow" alt="WebAPI wiki">
+      <p class="demourl">
+        <a href="https://wiki.mozilla.org/WebAPI">WebAPI Wiki</a>
+      </p>      
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="webapibullets" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web APIs</h2>
+      </header>
+      <ul class="longlist">
+        <li>Des API ouvertes et standards pour accéder au materiel</li>
+        <li>Créées, proposées et discutées avec les autres contructeurs de navigateur via les organismes de standardisation.</li>
+        <li>Une bonne façon d'interagir avec le matériel via JavaScript</li>
+        <li>Asynchrone — Tous les accès sont gérés via un gestionnaire de succès et d'erreur expliquant ce qui s'est passé de manière claire</li>
+        <li>Chapoté par un modèle de sécurité à 3 niveaux permettant de donner
+        des pouvoirs plus ou moins étendus aux applications selon leur mode de distribution.</li>
+      </ul>
+      <p class="demourl">
+        <a href="https://developer.mozilla.org/en-US/docs/WebAPI">WebAPIs on MDN</a>
+      </p>      
+      <footer class="notes">
+        The Web API effort of Mozilla is a way to make the whole hardware of mobile devices available in JavaScript in a secure, predictable and open way agreed with other browser makers and standards bodies. 
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="zomgapipublic" class="slide oneline"><div>
+    <section>
+      <header>
+        <h2>Les APIs « publiques »</h2>
+      </header>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="webapilist" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web APIs (hosted apps)</h2>
+      </header>
+      <ul class="inline">
+        <li>Vibration API</li>
+        <li>Screen Orientation</li>
+        <li>Geolocation API</li>
+        <li>Pointer Lock API</li>
+        <li>Open WebApps</li>
+        <li>Network Information API</li>
+        <li>Battery Status API</li>
+        <li>Alarm API</li>
+        <li>Push Notifications API</li>
+        <li>WebFM API / FMRadio</li>
+        <li>WebPayment</li>
+        <li>IndexedDB</li>
+        <li>Ambient light sensor</li>
+        <li>Proximity sensor</li>
+        <li>Notification</li>
+        <li>etc</li>
+      </ul>
+      <p class="demourl">
+        <a href="https://hacks.mozilla.org/2013/02/using-webapis-to-make-the-web-layer-more-capable/">Using WebAPIs to make the web layer more capable</a>
+      </p>      
+      <footer class="notes">
+        Hosted applications, meaning HTML5 apps you run on your own server, get the full functionality of HTML5 and additional API support shown here. All of these APIs are defined on the Mozilla Wiki and proposals to the standard bodies. Some of them have already been implemented in other other browsers, like the geolocation API. For now, however, only Firefox OS gives you all of them. These APIs bring much needed extra functionality to the HTML5 stack. 
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="webapilist2" class="slide"><div>
+    <section>
+      <header>
+        <h2>Les API à connaitre</h2>
+      </header>
+
+      <ul>
+        <li>Gérer le cache et la latence: Application Cache, Storage, IndexedDB, Offline.</li>
+        <li>Accéder au materiel: Sensor/Device API (devicemotion, deviceorientation, etc.)</li>
+        <li>Sortir du navigateur: Notifications</li>
+        <li>Travailler avec le réseau: Web Socket</li>
+        <li>Optimiser vos applications: Page Visibility API</li>
+      </ul>
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+
+  <div id="apiindexeddb" class="slide"><div>
+    <section>
+      <header>
+        <h2>IndexedDB</h2>
+      </header>
+
+      <ul>
+        <li>Une base de données de type « index »</li>
+        <li>Attention, ce n'est pas du SQL</li>
+        <li>On stocke des paires clé/valeur</li>
+        <li>Le moindre changement repose sur le concept de transaction</li>
+        <li>L'API est totalement asynchrone</li>
+      </ul>
+
+      <p class="demourl">
+        <a href="https://developer.mozilla.org/en-US/docs/IndexedDB">IndexedDB on MDN</a>
+      </p> 
+
+      <footer class="notes"></footer>
+    </section>
+  </div></div>
+
+  <div id="systemmessage" class="slide"><div>
+   <section>
+     <header>
+       <h2>Les messages système</h2>
+     </header>
+     <ul>
+       <li>Les applications peuvent s'abonner à des messages système.</li>
+       <li>Le principe, c'est que l'application peut être lancée pour recevoir
+       ce message.</li>
+       <li>Beaucoup de fonctions sont implémentées avec ce principe: push
+       notifications, téléphonie, sms, activités</li>
+     </ul>
+    <p class="demourl">
+     </p>      
+     <footer class="notes">
+     </footer>
+   </section>
+ </div></div>
+
+<!-- ===================================================================
+TOOLS 
+======================================================================== -->
+
+  <div id="zomgtools" class="slide shout"><div>
+    <section>
+      <header>
+        <h2>Les outils</h2>
+      </header>
+    <footer class="notes">
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="devtools" class="slide cover h"><div>
+    <section>
+      <header>
+        <h2>Les DevTools et le Remote Debugger</h2>
+      </header>
+      <img src="pictures/fxos/devtools.jpg" 
+           alt="Developer tools" 
+           class="middle">
+    <footer class="notes">
+      Browsers now are also developer tools. The tools built into the Firefox OS browser, for example, allow you to create apps in the browser, debug what is happening on the phone and simulate a Firefox OS device on your computer. 
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="fxossimulator" class="slide h"><div>
+    <section>
+      <header>
+        <h2>Firefox OS Simulator</h2>
+      </header>
+      <img src="pictures/fxos/simulator.png" 
+           alt="Simulator" 
+           class="middle shadow" height="400">
+      <p class="demourl">
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/firefox-os-simulator/">
+          Firefox OS Simulator
+        </a>
+      </p>
+    <footer class="notes">
+      The Firefox OS Simulator is an add-on for Firefox which simulates a phone on your computer. You can test the install process and buying and selling applications and you can send apps directly to a connected phone. You can also debug your applications directly from your computer including live CSS changes. 
+    </footer>
+    </section>
+  </div></div>
+
+  <div id="futur" class="slide shout"><div>
+  <section>
+    <header>
+    <h2>Les défis du futur</h2>
+    </header>
+    
+    <footer class="notes">
+    </footer>
+  </section>
+  </div></div>
+
+  <div id="problemes" class="slide"><div>
+  <section>
+    <header>
+    <h2>Les problèmes rencontrés</h2>
+    </header>
+    <ul>
+      <li>Vitesse de lancement</li>
+      <li>Listes infinies</li>
+      <li>Mises à jour</li>
+      <li>Applications packagées</li>
+      <li>"Janks" dans les animations et les rendus</li>
+      <li>Gestion de la mémoire dans une "one-page webapp"</li>
+      <li>Utilisation des multiples coeurs</li>
+    </ul>
+    
+    <footer class="notes">
+    </footer>
+  </section>
+  </div></div>
+
+  <div id="workers" class="slide"><div>
+  <section>
+    <header>
+    <h2>Les workers</h2>
+    </header>
+    
+    <ul>
+      <li>Les Workers s'exécutent dans un thread séparé.</li>
+      <li>Ils n'ont pas un accès direct au DOM.</li>
+      <li>La communication se fait par messages asynchrones.</li>
+      <li>On n'a pas accès à toutes les APIs (mais accès à IndexedDB !).</li>
+      <li>Shared Workers: workers partagés pour une même origine.</li>
+      <li>Idée 1: utiliser les Shared Workers pour le modèle de
+        l'application et les contrôleurs.</li>
+    </ul>
+    <footer class="notes">
+    </footer>
+  </section>
+  </div></div>
+
+  <div id="serviceworkers" class="slide"><div>
+  <section>
+    <header>
+    <h2>Les service workers</h2>
+    </header>
+    <ul>
+      <li>La nouvelle manière de faire du cache offline dans le navigateur</li>
+      <li>Se pose en coupure des requêtes</li>
+      <li>Idée 2: conserver un cache de la page dynamique</li>
+      <li>Idée 3: gérer une mise à jour incrémentale d'une application</li>
+      <li>Idée 3bis: pouvoir faire de l'A/B testing</li>
+    </ul>
+    <footer class="notes">
+    </footer>
+  </section>
+  </div></div>
+
+  <div id="iframes" class="slide"><div>
+  <section>
+    <header>
+    <h2>Les iframes</h2>
+    </header>
+    
+    <ul>
+      <li>Pour rappel, les iframes insèrent un contexte de navigation à
+        l'intérieur d'une page Web.</li>
+      <li>Idée 4: utiliser des documents séparés pour les différentes vues,
+        utiliser les iframes pour les insérer.</li>
+      <li>Idée 5: supprimer une iframe permet de libérer la mémoire.</li>
+      <li>Idée 6: on peut facilement afficher des vues différemment sur des
+        devices différents.</li>
+      <li>Idée 7: dans la page maître, récupérer des données automatiquement
+        (mémoire, vitesse, etc) pour faire de la télémétrie</li>
+    </ul>
+    <footer class="notes">
+    </footer>
+  </section>
+  </div></div>
+
+<!-- ===================================================================
+AND… I'M SPENT
+======================================================================== -->
+
+  <div id="thanks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Merci</h2>
+      </header>
+      <img src="pictures/mozillaoverview/redpanda.jpg" class="right" alt="Red panda (Firefox)">
+      <ul class="nobull">
+        <li>Julien Wajsberg</li>
+        <li>(avec des bouts de Jérémie Patonnier)</li>
+        <li>Introduction à Firefox OS</li>
+      </ul>
+      <small class="credits">
+        <a href="http://www.flickr.com/photos/yortw/5798336827/">Photo by Yortw</a>
+      </small>
+
+    <footer class="notes">
+    </footer>
+
+    </section>
+  </div></div>
+
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"><div></div></div>
+  <script src="scripts/script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
